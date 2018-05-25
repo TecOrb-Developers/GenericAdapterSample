@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+<TextView
+    android:padding="@dimen/dp16"
+    android:id="@+id/personName"
+    android:textColor="@android:color/black"
+    android:layout_margin="@dimen/dp8"
+    android:text="aaaaaa"
+    android:textSize="@dimen/sp20"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</TextView>
+</layout>

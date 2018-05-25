@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_margin="@dimen/dp8"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+   <ImageView
+       android:id="@+id/movieImage"
+       android:layout_width="@dimen/dp100"
+       android:layout_height="@dimen/dp100"
+       android:contentDescription="TODO" />
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dp8"
+        android:layout_marginStart="@dimen/dp8"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:text="aaaaaaaaaaaaa"
+            android:layout_gravity="center"
+            android:id="@+id/movieTitle"
+            android:textSize="@dimen/sp20"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="@dimen/dp8"
+            android:text="aa"
+            android:layout_gravity="center"
+            android:id="@+id/movieDirector"
+            android:textSize="@dimen/sp18"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_marginTop="@dimen/dp8"
+            android:text="aa"
+            android:layout_gravity="center"
+            android:id="@+id/movieRating"
+            android:textSize="@dimen/sp20"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>
+</layout>
