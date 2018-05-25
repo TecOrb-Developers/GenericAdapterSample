@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     listItem.add(nameModel);
                 }
 
-                NameAdapter nameAdapter = new NameAdapter(listItem,context);
+                NameAdapter nameAdapter = new NameAdapter(listItem);
                 activityMainBinding.mainList.setAdapter(nameAdapter);
                 break;
 
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     movieItem.add(moviesModel);
                 }
 
-                MoviesAdapter moviesAdapter = new MoviesAdapter(movieItem,context);
+                MoviesAdapter moviesAdapter = new MoviesAdapter(movieItem);
                 activityMainBinding.mainList.setAdapter(moviesAdapter);
                 break;
             case 3:
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     programmingItem.add(programmingModel);
                 }
 
-                ProgrammingAdapter programmingAdapter = new ProgrammingAdapter(programmingItem,context);
+                ProgrammingAdapter programmingAdapter = new ProgrammingAdapter(programmingItem);
                 activityMainBinding.mainList.setAdapter(programmingAdapter);
                 break;
         }

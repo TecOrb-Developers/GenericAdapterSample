@@ -18,15 +18,11 @@ import java.util.List;
 public abstract class GenericCommonAdapter<T> extends BaseAdapter {
 
     private List<T> customList = new ArrayList<T>() ;
-    private LayoutInflater inflater;
-    private Context context ;
 
     //in below constructor List<T> can be any type of list whether string type or int
 
-    public GenericCommonAdapter(List<T> list, Context context) {
+    public GenericCommonAdapter(List<T> list) {
         this.customList = list ;
-        this.context = context ;
-        inflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -46,12 +42,12 @@ public abstract class GenericCommonAdapter<T> extends BaseAdapter {
 
     @Override
      public View getView(int position, View view, ViewGroup viewGroup) {
-        return buildView(view, inflater, viewGroup,position);
+        return buildView(position, view, viewGroup);
 
     }
 
     //this buildView method is used to inflate custom view and we make it abstract as it may be override anywhere
 
-    public abstract View buildView(View v, LayoutInflater inflater, ViewGroup parent, int position);
+    public abstract View buildView(int position, View view, ViewGroup viewGroup);
 
 }

@@ -17,22 +17,19 @@ import akansha.tecorb.genericsampleapp.databinding.CustomNameViewBinding;
  * Created by tecorb on 24/5/18.
  */
 
-public class MoviesAdapter extends GenericCommonAdapter {
-    private List<MoviesModel> itemModels=new ArrayList<>();
-    private  Context context ;
+public class MoviesAdapter extends GenericCommonAdapter<MoviesModel> {
 
 
-    public MoviesAdapter(ArrayList<MoviesModel> movieItem, Context context) {
-        super(movieItem,context); // this method is used to call Generic Common adapter where we are passing diffrent arrayList data
-        this.itemModels = movieItem ;
-        this.context = context ;
+    public MoviesAdapter(ArrayList<MoviesModel> movieItem) {
+        super(movieItem); // this method is used to call Generic Common adapter where we are passing diffrent arrayList data
     }
 
     // with below buildView method we are inflating the custom view of movie this method is overridden method
     // of Generic Common Adapter with the help of which we can create custom views according to our need
 
+
     @Override
-    public View buildView(View view, LayoutInflater inflater, ViewGroup parent, int position) {
+    public View buildView(int position, View view, ViewGroup parent) {
         CustomMovieViewBinding customBinding ;
         if(view == null){
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_movie_view, null);
@@ -42,13 +39,17 @@ public class MoviesAdapter extends GenericCommonAdapter {
             customBinding = (CustomMovieViewBinding) view.getTag();
         }
 
-        customBinding.movieTitle.setText(itemModels.get(position).getTitle());
-        customBinding.movieDirector.setText(itemModels.get(position).getSubTitle());
-        customBinding.movieRating.setText(itemModels.get(position).getRating());
-        customBinding.movieImage.setImageResource(itemModels.get(position).getImage());
+        customBinding.movieTitle.setText(getItem(position).getTitle());
+        customBinding.movieDirector.setText(getItem(position).getSubTitle());
+        customBinding.movieRating.setText(getItem(position).getRating());
+        customBinding.movieImage.setImageResource(getItem(position).getImage());
 
 
         return customBinding.getRoot();
+    }
 
+    @Override
+    public MoviesModel getItem(int position) {
+        return super.getItem(position);
     }
 }
